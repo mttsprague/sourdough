@@ -1,6 +1,13 @@
 // Shopping Cart Functionality
 let cart = [];
 
+// Initialize Stripe (replace with your publishable key after setup)
+const STRIPE_PUBLISHABLE_KEY = 'pk_test_YOUR_KEY_HERE'; // You'll replace this
+const stripe = window.Stripe ? window.Stripe(STRIPE_PUBLISHABLE_KEY) : null;
+
+// Backend URL (you'll need to deploy a backend - I'll provide instructions)
+const BACKEND_URL = 'YOUR_BACKEND_URL_HERE'; // You'll replace this
+
 // Load cart from localStorage
 function loadCart() {
     const savedCart = localStorage.getItem('rachelsRiseCart');
@@ -162,9 +169,52 @@ cartModal.addEventListener('click', function(e) {
 });
 
 // Checkout
-document.getElementById('checkoutBtn').addEventListener('click', function() {
+document.getElementById('checkoutBtn').addEventListener('click', async function() {
     if (cart.length === 0) return;
 
+    const checkoutBtn = this;
+    checkoutBtn.disabled = true;
+    checkoutBtn.textContent = 'Processing...';
+
+    try {
+        // Check if Stripe is configured
+        if (!stripe || STRIPE_PUBLISHABLE_KEY === 'pk_test_YOUR_KEY_HERE') {
+            // Fallback to manual checkout for now
+            manualCheckout();
+            return;
+        }
+
+        // Create checkout session via backend
+        const response = await fetch(`${BACKEND_URL}/create-checkout-session`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ items: cart })
+        });
+
+        const session = await response.json();
+
+        // Redirect to Stripe Checkout
+        const result = await stripe.redirectToCheckout({
+            sessionId: session.id
+        });
+
+        if (result.error) {
+            alert(result.error.message);
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        // Fallback to manual checkout
+        manualCheckout();
+    } finally {
+        checkoutBtn.disabled = false;
+        checkoutBtn.textContent = 'Proceed to Checkout';
+    }
+});
+
+// Manual checkout fallback
+function manualCheckout() {
     const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
     const itemsList = cart.map(item => `${item.quantity}x ${item.name}`).join(', ');
     
@@ -175,7 +225,7 @@ document.getElementById('checkoutBtn').addEventListener('click', function() {
     saveCart();
     updateCartUI();
     cartModal.classList.remove('active');
-});
+}
 
 // Contact Form
 document.getElementById('contactForm').addEventListener('submit', function(e) {
