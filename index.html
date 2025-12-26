@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rachel's Rise - Artisan Sourdough Bakery</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <div class="logo">
+                        <h1>Rachel's Rise</h1>
+                        <p class="tagline">Artisan Sourdough</p>
+                    </div>
+                    <ul class="nav-menu">
+                        <li><a href="#home" class="nav-link">Home</a></li>
+                        <li><a href="#products" class="nav-link">Products</a></li>
+                        <li><a href="#about" class="nav-link">About</a></li>
+                        <li><a href="#contact" class="nav-link">Contact</a></li>
+                        <li><a href="#" class="cart-btn" id="cartBtn">
+                            🛒 Cart (<span id="cartCount">0</span>)
+                        </a></li>
+                    </ul>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2 class="hero-title">Handcrafted Sourdough</h2>
+            <p class="hero-subtitle">From Our Kitchen to Your Table</p>
+            <p class="hero-description">Made with love, patience, and the finest ingredients. Experience the authentic taste of traditional sourdough baking.</p>
+            <a href="#products" class="cta-button">Shop Now</a>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <h2 class="section-title">Our Products</h2>
+            <p class="section-subtitle">Each loaf is handcrafted with care and naturally fermented for optimal flavor and nutrition</p>
+            
+            <div class="products-grid">
+                <!-- Jalapeño Cheddar Sourdough -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="jalached.png" alt="Jalapeño Cheddar Sourdough">
+                        <div class="product-badge">Bestseller</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Jalapeño Cheddar</h3>
+                        <p class="product-description">A delightful blend of spicy jalapeños and sharp cheddar cheese folded into our classic sourdough. Perfect for sandwiches or toast.</p>
+                        <div class="product-meta">
+                            <span class="product-weight">24 oz loaf</span>
+                            <span class="product-time">48-hour fermentation</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$12.00</span>
+                            <button class="add-to-cart" data-name="Jalapeño Cheddar Sourdough" data-price="12.00" data-id="1">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Classic Country Sourdough -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="jalached.png" alt="Classic Country Sourdough">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Classic Country</h3>
+                        <p class="product-description">Our signature loaf with a golden crust and soft, airy interior. Perfect for any occasion with its mild tangy flavor.</p>
+                        <div class="product-meta">
+                            <span class="product-weight">28 oz loaf</span>
+                            <span class="product-time">48-hour fermentation</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$10.00</span>
+                            <button class="add-to-cart" data-name="Classic Country Sourdough" data-price="10.00" data-id="2">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Whole Wheat Sourdough -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="jalached.png" alt="Whole Wheat Sourdough">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Whole Wheat</h3>
+                        <p class="product-description">Hearty and nutritious, made with 100% stone-ground whole wheat flour. Rich in flavor with a dense, satisfying texture.</p>
+                        <div class="product-meta">
+                            <span class="product-weight">26 oz loaf</span>
+                            <span class="product-time">52-hour fermentation</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$11.00</span>
+                            <button class="add-to-cart" data-name="Whole Wheat Sourdough" data-price="11.00" data-id="3">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Olive & Rosemary Sourdough -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="jalached.png" alt="Olive & Rosemary Sourdough">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Olive & Rosemary</h3>
+                        <p class="product-description">Mediterranean-inspired with kalamata olives and fresh rosemary. An elegant choice for cheese boards and appetizers.</p>
+                        <div class="product-meta">
+                            <span class="product-weight">24 oz loaf</span>
+                            <span class="product-time">48-hour fermentation</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$13.00</span>
+                            <button class="add-to-cart" data-name="Olive & Rosemary Sourdough" data-price="13.00" data-id="4">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cinnamon Raisin Sourdough -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="jalached.png" alt="Cinnamon Raisin Sourdough">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Cinnamon Raisin</h3>
+                        <p class="product-description">Sweet and comforting with cinnamon swirls and plump raisins. Perfect for breakfast toast or French toast.</p>
+                        <div class="product-meta">
+                            <span class="product-weight">22 oz loaf</span>
+                            <span class="product-time">48-hour fermentation</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$12.00</span>
+                            <button class="add-to-cart" data-name="Cinnamon Raisin Sourdough" data-price="12.00" data-id="5">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sourdough Starter -->
+                <div class="product-card featured">
+                    <div class="product-image">
+                        <img src="jalached.png" alt="Sourdough Starter">
+                        <div class="product-badge special">Start Baking</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Live Sourdough Starter</h3>
+                        <p class="product-description">Begin your own sourdough journey! Active starter fed and ready to use. Includes feeding instructions and beginner's guide.</p>
+                        <div class="product-meta">
+                            <span class="product-weight">8 oz jar</span>
+                            <span class="product-time">3+ years old culture</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$15.00</span>
+                            <button class="add-to-cart" data-name="Live Sourdough Starter" data-price="15.00" data-id="6">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">About Rachel's Rise</h2>
+                    <p>Hi, I'm Rachel! My sourdough journey began as a passion project during the pandemic, and it has blossomed into a labor of love. Every loaf I create is a testament to patience, traditional techniques, and quality ingredients.</p>
+                    <p>I use only organic flour, filtered water, and sea salt - letting time and natural fermentation work their magic. Each loaf undergoes a minimum 48-hour fermentation process, resulting in bread that's not only delicious but easier to digest and packed with nutrients.</p>
+                    <p>Baking is my meditation, and sharing these loaves with you brings me immense joy. Thank you for supporting my small business and joining me on this delicious journey!</p>
+                    <div class="about-features">
+                        <div class="feature">
+                            <span class="feature-icon">🌾</span>
+                            <h4>Organic Ingredients</h4>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">⏰</span>
+                            <h4>Traditional Methods</h4>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">💚</span>
+                            <h4>Made with Love</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <p>🥖</p>
+                        <span>Rachel at work</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <p class="section-subtitle">Have questions or special requests? I'd love to hear from you!</p>
+            <div class="contact-content">
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+                <div class="contact-info">
+                    <div class="info-item">
+                        <h4>📍 Location</h4>
+                        <p>Local delivery available</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>📧 Email</h4>
+                        <p>hello@rachelsrise.com</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>⏰ Baking Schedule</h4>
+                        <p>Fresh loaves Tuesday & Saturday</p>
+                        <p class="small">Order by Monday/Friday for next batch</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>📱 Follow Me</h4>
+                        <div class="social-links">
+                            <a href="#" class="social-link">Instagram</a>
+                            <a href="#" class="social-link">Facebook</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-modal-content">
+            <div class="cart-header">
+                <h3>Your Cart</h3>
+                <button class="close-cart" id="closeCart">&times;</button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <p class="empty-cart">Your cart is empty</p>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cartTotal">$0.00</span>
+                </div>
+                <button class="checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Rachel's Rise. All rights reserved.</p>
+            <p class="footer-small">Made with ❤️ and wild yeast</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
